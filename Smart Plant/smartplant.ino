@@ -113,55 +113,25 @@ int speakerPin = D5;
 int song = 0;
 int melody_song = 1;
 int underworld_melody_song = 2;
- 
 
-
-
-
-// int DIN = D5;
-// int CS = D6;
-// int CLK = D7;
-
-// byte smile[8] = {0x3C, 0x42, 0xA5, 0x81, 0xA5, 0x99, 0x42, 0x3C};
 //Define the pin for photo cell
 int photoCellPin = A0;
 int switchPin = A1;
-//create a variable to store light reading
+//Create a variable to store light reading
 int photoCellReading = 0;
 
 //Define LED pin
 int ledPinGreen = D2;
 int ledPinBlue = D3;
 
-//Define the pin for temperature
-// int tempPin = A1;
-// 
-//create a variable to store LED brightness
-int ledBrightness = 0;
-int forceReading = 0;
-//create variables to store temperature value
-int tempC = 0;
-int tempF = 0;
-// LedControl lc = LedControl(DIN, CLK, CS, 0);
 int timer = 0;
 void setup() {
-    // pinMode(tempPin, INPUT);
-    // pinMode(btnPinBlue, INPUT);
-    // pinMode(btnPinGreen, INPUT);
     pinMode(ledPinGreen, OUTPUT);
     pinMode(ledPinBlue, OUTPUT);
     pinMode(switchPin, INPUT_PULLUP); // sets pin as input
 
     // Register a Particle variable for light reading
     Particle.variable("light", &photoCellReading, INT);
-    Particle.variable("force", &forceReading, INT);
-    // Register a Particle variable for temperature reading
-    // Particle.variable("tempC", &tempC, DOUBLE);
-    // Particle.variable("tempF", &tempF, DOUBLE);
-    
-    // lc.shutdown(0, false);
-    // lc.setIntensity(0, 15);
-    // lc.clearDisplay(0);
 }
 
 
@@ -207,7 +177,6 @@ void sing(int s) {
       int noteDuration = 1000 / underworld_tempo[thisNote];
  
       tone(speakerPin, underworld_melody[thisNote], noteDuration);
-      analogWrite(ledPinGreen, underworld_melody[thisNote]);
       // to distinguish the notes, set a minimum time between them.
       // the note's duration + 30% seems to work well:
       int pauseBetweenNotes = noteDuration * 1.30;
@@ -230,8 +199,6 @@ void sing(int s) {
       int noteDuration = 1000 / tempo[thisNote];
  
       tone(speakerPin, melody[thisNote], noteDuration);
-      analogWrite(ledPinGreen, melody[thisNote]);
-
       // to distinguish the notes, set a minimum time between them.
       // the note's duration + 30% seems to work well:
       int pauseBetweenNotes = noteDuration * 1.30;
