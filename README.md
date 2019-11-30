@@ -5,11 +5,11 @@
 This repository documents Particle Skill Development works. It is a part of course assignments for CMU III course Design Internet of Things.
 
 ## Table of Contents
-[Hello World](https://github.com/arthur-cen/particle_dev#Hello World)
+* [Hello World](https://github.com/arthur-cen/particle_dev#hello-world)
 
-[Tilt and Light] (https://github.com/arthur-cen/particle_dev#Tilt and Light)
+* [Tilt and Light](https://github.com/arthur-cen/particle_dev#tilt-and-light)
 
-[Go! Super Mario!] (https://github.com/arthur-cen/particle_dev#Go! Super Mario!)
+* [Go! Super Mario!](https://github.com/arthur-cen/particle_dev#go!-super-mario!)
 
 ### Hello World
 This is the starting point. It gives you a initial setup to program on a particle Argon.
